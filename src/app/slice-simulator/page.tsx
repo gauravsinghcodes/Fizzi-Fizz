@@ -10,7 +10,9 @@ import { components } from "@/slices";
 
 export default function SliceSimulatorPage({
   searchParams,
-}: SliceSimulatorParams & { searchParams: { secret?: string } }) {
+}: {
+  searchParams: { secret?: string; state?: string };
+}) {
   if (
     process.env.SLICE_SIMULATOR_SECRET &&
     searchParams.secret !== process.env.SLICE_SIMULATOR_SECRET
